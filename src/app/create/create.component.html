@@ -1,0 +1,31 @@
+
+
+<form (submit)="onSubmit()" #formData="ngForm">
+  <h2>Add a Quote</h2>  
+  <textarea rows="5" cols="30" 
+    required
+    name="content"
+    minlength= "5"
+    [(ngModel)]="quote.content"    
+    #content="ngModel"
+    formData= 'quote'>
+  </textarea>
+    <div *ngIf="content.errors">
+        <div class="errors" *ngIf="!content.valid">Quote is required.</div>  
+        </div>
+    <br>
+    <h3>Author</h3>
+    <input 
+    type="text"
+    required
+    name='author'
+    minlength="4"
+    [(ngModel)]="quote.author"
+    #author="ngModel"
+    >
+    <div *ngIf='author.errors'>
+        <div class="errors" *ngIf="!author.valid">Author is required.</div>  
+        </div>
+    <br>
+    <button type='submit' [disabled]="!formData.valid">Add Quote</button>
+  </form>

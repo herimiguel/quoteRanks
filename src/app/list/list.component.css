@@ -1,0 +1,15 @@
+.allQuotes{
+    border: 5px dashed blue;
+    margin: 10px;
+}
+#up{
+    background-color: green;
+}
+
+#down{
+    background-color: red;
+}
+
+#delete{
+    background-color: brown
+}
